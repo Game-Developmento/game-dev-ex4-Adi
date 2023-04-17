@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[RequireComponent(typeof(BoxCollider2D))]
 public class BorderCollision2D : MonoBehaviour {
     [Tooltip("Every object tagged with this tag will trigger the destruction of this object")]
     [SerializeField] string triggeringTag;
@@ -10,7 +9,7 @@ public class BorderCollision2D : MonoBehaviour {
     * Extents is half of the width or height of the box, so it can be used to find the edges from the center point.
     */
     private void OnTriggerExit2D(Collider2D other) {
-        if (other.tag == triggeringTag && enabled) {
+        if(other.tag == triggeringTag && enabled) {
             Bounds screen_bounds = this.GetComponent<BoxCollider2D>().bounds;
             Vector2 border_center = screen_bounds.center;
             Vector2 border_extents = screen_bounds.extents; 
