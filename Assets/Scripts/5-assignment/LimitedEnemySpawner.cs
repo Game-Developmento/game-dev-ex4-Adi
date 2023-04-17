@@ -9,18 +9,15 @@ public class LimitedEnemySpawner : MonoBehaviour {
     [Tooltip("Maximum time between consecutive spawns, in seconds")] [SerializeField] float maxTimeBetweenSpawns = 3f;
     [Tooltip("Maximum distance in X between spawner and spawned objects, in meters")] [SerializeField] float maxXDistance = 0.5f;
 
-    
     [SerializeField] int _num_enemies = 0;
     [SerializeField] int _enemies_limit = 3;
     
-
     void Start() {
          this.StartCoroutine(SpawnRoutine());    // co-routines
     }
 
     IEnumerator SpawnRoutine() {    // co-routines
         while (true) {
-            Debug.Log("Number of enemies: " + _num_enemies);
             float timeBetweenSpawnsInSeconds = Random.Range(minTimeBetweenSpawns, maxTimeBetweenSpawns);
             yield return new WaitForSeconds(timeBetweenSpawnsInSeconds);       // co-routines
             if(_num_enemies < _enemies_limit) {
