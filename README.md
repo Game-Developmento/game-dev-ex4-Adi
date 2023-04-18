@@ -1,7 +1,5 @@
 # Spaceship Shooter Game
 
-----
-
 # Overview
 
 This is a simple spaceship shooter game built with Unity, where the player's objective is to shoot down enemy spaceships without colliding with them.
@@ -25,8 +23,6 @@ The game was built using Unity version `2021.3.18f1`.
 6. Enjoy the game!
 
 # Modified Contents and Folders
-
-The game has the following contents and folders:
 
 ## Scenes
 
