@@ -4,7 +4,7 @@
 
 This is a simple spaceship shooter game built with Unity, where the player's objective is to shoot down enemy spaceships without colliding with them.
 
-## Changes Made
+## New Features
 
 1. A feature was added to keep the player and enemies from going out of bounds on the game screen.
 2. A feature was added to regulate the number of enemies that can appear on the screen, gradually increasing their number as the player eliminates them and creating a greater challenge.
@@ -48,11 +48,17 @@ The `EnemySaucerWithLimitedSpawning` prefab uses the `LimitedEnemySpawner` scrip
 
 This script is added to the `EnemySaucerWithLimitedSpawning` prefab and is triggered when an enemy is hit by the player's laser shot. The script calls the `SubtractEnemy()` method of the spawner to reduce the number of enemies on the screen. A reference to spawner is set when the enemy game object is instantiated.
 
+### Replay
+
+Resets the player's score and allows them to replay the game.
+
 ## Prefabs
 
 The game has the following prefab:
 
-`EnemySaucerWithLimitedSpawning`: This prefab is used to spawn enemies in the game. It uses the LimitedEnemySpawner script to control the number of enemies on the screen.
+### EnemySaucerWithLimitedSpawning
+
+This prefab is used to spawn enemies in the game. It uses the LimitedEnemySpawner script to control the number of enemies on the screen.
 
 # Credits
 
