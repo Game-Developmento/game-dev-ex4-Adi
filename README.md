@@ -35,30 +35,18 @@ The game has two scenes located in the `Scenes/5-assignment` folder. These scene
 
 The `Scripts/5-assignment` folder contains the following scripts:
 
-#### BorderCollision2D
+* `BorderCollision2D`: This script is added to the StarBackground game object and detects when the player or an enemy has gone out of bounds. When this happens, the script changes the position of the object to the opposite side of the screen.
 
-This script is added to the StarBackground game object and detects when the player or an enemy has gone out of bounds. When this happens, the script changes the position of the object to the opposite side of the screen.
-
-#### LimitedEnemySpawner
-
-The LimitedEnemySpawner script keeps count of the number of enemies on the screen and a limit. If the number of enemies is less than the limit, the script generates a new enemy. The script also contains a method that allows you to subtract an enemy, increasing the limit by 1. Every time the player eliminates an enemy, more enemies can spawn on the screen.
+* `LimitedEnemySpawner`: The LimitedEnemySpawner script keeps count of the number of enemies on the screen and a limit. If the number of enemies is less than the limit, the script generates a new enemy. The script also contains a method that allows you to subtract an enemy, increasing the limit by 1. Every time the player eliminates an enemy, more enemies can spawn on the screen.
 The `EnemySaucerWithLimitedSpawning` prefab uses the `LimitedEnemySpawner` script to control the spawning of enemies.
 
-#### OnEnemyDestroyed
+* `OnEnemyDestroyed`: This script is added to the `EnemySaucerWithLimitedSpawning` prefab and is triggered when an enemy is hit by the player's laser shot. The script calls the `SubtractEnemy()` method of the spawner to reduce the number of enemies on the screen. A reference to spawner is set when the enemy game object is instantiated.
 
-This script is added to the `EnemySaucerWithLimitedSpawning` prefab and is triggered when an enemy is hit by the player's laser shot. The script calls the `SubtractEnemy()` method of the spawner to reduce the number of enemies on the screen. A reference to spawner is set when the enemy game object is instantiated.
-
-#### Replay
-
-Resets the player's score and allows them to replay the game.
+* `Replay`: Resets the player's score and allows them to replay the game.
 
 ### Prefabs
 
-The game has the following prefab:
-
-#### EnemySaucerWithLimitedSpawning
-
-This prefab is used to spawn enemies in the game. It uses the LimitedEnemySpawner script to control the number of enemies on the screen.
+* `EnemySaucerWithLimitedSpawning`: This prefab is used to spawn enemies in the game. It uses the LimitedEnemySpawner script to control the number of enemies on the screen.
 
 ## Credits
 
