@@ -10,7 +10,7 @@ public class LimitedEnemySpawner : MonoBehaviour {
     [Tooltip("Maximum distance in X between spawner and spawned objects, in meters")] [SerializeField] float maxXDistance = 0.5f;
 
     [SerializeField] int _num_enemies = 0;
-    [SerializeField] int _enemies_limit = 3;
+    [SerializeField] int _enemies_limit = 1;
     
     void Start() {
          this.StartCoroutine(SpawnRoutine());    // co-routines
@@ -35,5 +35,6 @@ public class LimitedEnemySpawner : MonoBehaviour {
 
     public void SubtractEnemy() {
         --_num_enemies;
+        ++_enemies_limit; // Level gets harder when an enemy is eliminated!
     }
 }

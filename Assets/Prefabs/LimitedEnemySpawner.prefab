@@ -50,6 +50,5 @@ MonoBehaviour:
   minTimeBetweenSpawns: 1
   maxTimeBetweenSpawns: 3
   maxXDistance: 5
-  maxYDistance: 5
   _num_enemies: 0
-  _enemies_limit: 3
+  _enemies_limit: 1
