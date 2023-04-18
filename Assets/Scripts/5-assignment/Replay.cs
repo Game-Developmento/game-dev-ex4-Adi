@@ -7,7 +7,11 @@ public class Replay : MonoBehaviour {
     public void LoadScene() {
         player = GameObject.FindGameObjectWithTag("Player");
         if(player) {
-            player.GetComponentInChildren<NumberField>().SetNumber(0);
+            NumberField nf = player.GetComponentInChildren<NumberField>();
+            if(nf) {
+                nf.SetNumber(0);
+            }
+            
         }
         SceneManager.LoadScene("a-level-1");
     }

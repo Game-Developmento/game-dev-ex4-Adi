@@ -18,8 +18,6 @@ public class LimitedEnemySpawner : MonoBehaviour {
 
     IEnumerator SpawnRoutine() {    // co-routines
         while (true) {
-            float timeBetweenSpawnsInSeconds = Random.Range(minTimeBetweenSpawns, maxTimeBetweenSpawns);
-            yield return new WaitForSeconds(timeBetweenSpawnsInSeconds);       // co-routines
             if(_num_enemies < _enemies_limit) {
                 Vector3 positionOfSpawnedObject = new Vector3(
                     transform.position.x + Random.Range(-maxXDistance, +maxXDistance),
@@ -30,6 +28,8 @@ public class LimitedEnemySpawner : MonoBehaviour {
                 newObject.GetComponent<OnEnemyDestroyed>().SetEnemySpawner(this);
                 ++_num_enemies;
             }
+            float timeBetweenSpawnsInSeconds = Random.Range(minTimeBetweenSpawns, maxTimeBetweenSpawns);
+            yield return new WaitForSeconds(timeBetweenSpawnsInSeconds);       // co-routines
         }
     }
 
