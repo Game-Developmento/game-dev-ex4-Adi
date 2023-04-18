@@ -29,7 +29,7 @@ The game was built using Unity version `2021.3.18f1`.
 The game has two scenes located in the `Scenes/5-assignment` folder. These scenes are:
 
 1. `a-level-1`: This scene contains the main gameplay.
-2. `a-level-2`: This scene is displayed when the player collides with an enemy and the game is over.
+2. `a-level-2`: This scene is displayed when the player passes through the arrow and wins.
 
 ### Scripts
 
