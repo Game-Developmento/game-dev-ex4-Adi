@@ -8,13 +8,19 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/4-levels/level-1.unity
     guid: 7b9c106c66bcfde438f75b0322428201
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/4-levels/level-2.unity
     guid: 746da71bf020a504bb92b7b3fd74cf3e
   - enabled: 0
     path: Assets/Scenes/2-prefabs/b-instantiate.unity
     guid: 2e934fb2f71798c4caddce2e03fed046
+  - enabled: 1
+    path: Assets/Scenes/5-assignment/a-level-1.unity
+    guid: fde0229aac529ba4bafffdd3a2f4013b
+  - enabled: 1
+    path: Assets/Scenes/5-assignment/a-level-2.unity
+    guid: be50287503842444895a1c46f6b343f0
   m_configObjects: {}
