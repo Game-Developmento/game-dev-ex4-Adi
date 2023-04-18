@@ -1,42 +1,63 @@
-# Unity week 2: Formal elements
+# Spaceship Shooter Game
 
-A project with step-by-step scenes illustrating some of the formal elements of game development in Unity, including: 
+----
 
-* Prefabs for instantiating new objects;
-* Colliders for triggering outcomes of actions;
-* Coroutines for setting time-based rules.
+# Overview
 
-Text explanations are available 
-[here](https://github.com/gamedev-at-ariel/gamedev-5782) in folder 04.
+This is a simple spaceship shooter game built with Unity, where the player's objective is to shoot down enemy spaceships without colliding with them.
 
-## Cloning
-To clone the project, you may need to install git lfs first (if it is not already installed):
+## Changes Made
 
-    git lfs install 
+1. A feature was added to keep the player and enemies from going out of bounds on the game screen.
+2. A feature was added to regulate the number of enemies that can appear on the screen, gradually increasing their number as the player eliminates them and creating a greater challenge.
 
-To clone faster, you can limit the depth to 1 like this:
+# Unity Version
 
-    git clone --depth=1 https://github.com/<repository-name>.git
+The game was built using Unity version `2021.3.18f1`.
 
-When you first open this project, you may not see the text in the score field.
-This is because `TextMeshPro` is not in the project.
-The Unity Editor should hopefully prompt you to import TextMeshPro;
-once you do this, re-open the scenes, and you should be able to see the texts.
+# Rules & How to Play
 
+1. Open the game <link>.
+2. Use the arrow keys (left, right, up, and down) to move the player's spaceship.
+3. Press the spacebar to shoot.
+4. Shoot down the enemy spaceships to earn 2 points for each successful hit.
+5. Avoid colliding with the enemy spaceships, as this will end the game.
+6. Enjoy the game!
 
+# Modified Contents and Folders
 
-## Credits
+The game has the following contents and folders:
 
-Programming:
-* Maoz Grossman
-* Erel Segal-Halevi
+## Scenes
 
-Online courses:
-* [The Ultimate Guide to Game Development with Unity 2019](https://www.udemy.com/the-ultimate-guide-to-game-development-with-unity/), by Jonathan Weinberger
+The game has two scenes located in the `Scenes/5-assignment` folder. These scenes are:
 
-Graphics:
-* [Matt Whitehead](https://ccsearch.creativecommons.org/photos/7fd4a37b-8d1a-4d4c-80a2-4ca4a3839941)
-* [Kenney's space kit](https://kenney.nl/assets/space-kit)
-* [Ductman's 2D Animated Spacehips](https://assetstore.unity.com/packages/2d/characters/2d-animated-spaceships-96852)
-* [Franc from the Noun Project](https://commons.wikimedia.org/w/index.php?curid=64661575)
-* [Greek-arrow-animated.gif by Andrikkos is licensed under CC BY-SA 3.0](https://search.creativecommons.org/photos/2db102af-80d0-4ec8-9171-1ac77d2565ce)
+1. `MainScene`: This scene contains the main gameplay.
+2. `GameOverScene`: This scene is displayed when the player collides with an enemy and the game is over.
+
+## Scripts
+
+The `Scripts/5-assignment` folder contains the following scripts:
+
+### BorderCollision2D
+
+This script is added to the StarBackground game object and detects when the player or an enemy has gone out of bounds. When this happens, the script changes the position of the object to the opposite side of the screen.
+
+### LimitedEnemySpawner
+
+The LimitedEnemySpawner script keeps count of the number of enemies on the screen and a limit. If the number of enemies is less than the limit, the script generates a new enemy. The script also contains a method that allows you to subtract an enemy, increasing the limit by 1. Every time the player eliminates an enemy, more enemies can spawn on the screen.
+The `EnemySaucerWithLimitedSpawning` prefab uses the `LimitedEnemySpawner` script to control the spawning of enemies.
+
+### OnEnemyDestroyed
+
+This script is added to the `EnemySaucerWithLimitedSpawning` prefab and is triggered when an enemy is hit by the player's laser shot. The script calls the `SubtractEnemy()` method of the spawner to reduce the number of enemies on the screen. A reference to spawner is set when the enemy game object is instantiated.
+
+## Prefabs
+
+The game has the following prefab:
+
+`EnemySaucerWithLimitedSpawning`: This prefab is used to spawn enemies in the game. It uses the LimitedEnemySpawner script to control the number of enemies on the screen.
+
+# Credits
+
+This game was built as part of a Unity programming course. The original game was modified with new scripts added to it.
